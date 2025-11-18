@@ -7,12 +7,6 @@ const BASE_URL = "https://api.trello.com/1";
 const key = process.env.TRELLO_KEY;
 const token = process.env.TRELLO_TOKEN;
 
-/**
- * ---------------------------------------------------------
- * CREATE BOARD
- * POST /api/boards
- * ---------------------------------------------------------
- */
 router.post("/", async (req, res) => {
   try {
     const { name, defaultLists } = req.body;
@@ -24,12 +18,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-/**
- * ---------------------------------------------------------
- * GET LISTS FOR A BOARD
- * GET /api/boards/:boardId/lists
- * ---------------------------------------------------------
- */
 router.get("/:boardId/lists", async (req, res) => {
   const { boardId } = req.params;
 
@@ -43,12 +31,6 @@ router.get("/:boardId/lists", async (req, res) => {
   }
 });
 
-/**
- * ---------------------------------------------------------
- * GET CARDS FOR A LIST
- * GET /api/boards/:boardId/lists/:listId/cards
- * ---------------------------------------------------------
- */
 router.get("/:boardId/lists/:listId/cards", async (req, res) => {
   const { listId } = req.params;
 

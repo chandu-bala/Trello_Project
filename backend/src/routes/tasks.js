@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const trello = require("../services/trelloClient");
 
-// CREATE Card
 router.post("/", async (req, res) => {
   try {
     const { listId, name, desc } = req.body;
@@ -13,7 +12,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// UPDATE Card
 router.put("/:cardId", async (req, res) => {
   try {
     const cardId = req.params.cardId;
@@ -24,7 +22,6 @@ router.put("/:cardId", async (req, res) => {
   }
 });
 
-// DELETE Card (closed=true)
 router.delete("/:cardId", async (req, res) => {
   try {
     const cardId = req.params.cardId;
