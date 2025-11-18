@@ -14,7 +14,7 @@ module.exports = {
     return axios.post(url);
 },
 
-
+  
   updateCard: async (cardId, fields) => {
     const params = Object.entries(fields)
       .map(([k, v]) => `&${k}=${encodeURIComponent(v)}`)
@@ -26,7 +26,6 @@ module.exports = {
   deleteCard: async (cardId) => {
     return axios.put(trelloURL(`/cards/${cardId}`, "&closed=true"));
   },
-
   createBoard: async (name, defaultLists) => {
     return axios.post(
       trelloURL("/boards", `&name=${encodeURIComponent(name)}&defaultLists=${defaultLists}`)
