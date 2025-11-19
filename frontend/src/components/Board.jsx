@@ -21,6 +21,7 @@ export default function Board() {
       setLoading(false);
     }
   }, [boardId]);
+  
 
   // Initial load
   useEffect(() => {
