@@ -8,6 +8,7 @@ export const getBoardData = async (boardId) => {
   const lists = listsRes.data;
 
   // Fetch cards for each list
+
   const listsWithCards = await Promise.all(
     lists.map(async (list) => {
       const cardsRes = await axios.get(`${API_BASE}/boards/${boardId}/lists/${list.id}/cards`);
@@ -17,6 +18,7 @@ export const getBoardData = async (boardId) => {
       };
     })
   );
+  
 
   return listsWithCards;
 };
